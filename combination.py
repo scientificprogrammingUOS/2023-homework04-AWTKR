@@ -7,9 +7,8 @@ def combination(arr1: NDArray, arr2: NDArray, axis=0):
     arr1 = arr1.squeeze()
     arr2 = arr2.squeeze()
     
-    if not arr1.shape[axis] != arr2.shape[axis]:
+    if len(arr1.shape) != len(arr2.shape):
         raise ValueError(f"cannot combine arrays along axis {axis}, wrong dimensions")
-        return 
 
     return np.concatenate((arr1, arr2), axis=axis)
 
